@@ -1,4 +1,4 @@
-# Jak Banks Digital Garden
+# Jak Lewis Digital Garden
 
 This repository contains a Jekyll-based digital garden integrated with Obsidian for content creation.
 
