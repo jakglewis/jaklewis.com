@@ -3,34 +3,38 @@ layout: default
 title: Jak Lewis
 permalink: /
 ---
+# I build deal sourcing engines that actually work.
 
-I write [Sowing Stars](https://sowingstars.substack.com/), a newsletter about soulmaking. This site contains the full galaxy of what I'm exploring.
+I've deployed £250M+ as a Senior Investor and built the data infrastructure that made it possible. Most funds want data-driven deal flow. Almost none have it.
 
-{% assign notes = site.notes | where_exp: "item", "item.path contains '.md'" | sort: "date" | reverse %}
-{% assign latest_note = notes | first %}
+I bridge that gap.
 
-{% if notes.size > 0 %}
-***
-
-## Latest
-
-### [{{ latest_note.title }}]({{ latest_note.url }})
-{% if latest_note.date %}{{ latest_note.date | date: "%B %d, %Y" }}{% else %}Recently updated{% endif %}
-
-{{ latest_note.content | strip_html | truncatewords: 30 }}
-[Keep reading →]({{ latest_note.url }})
+"Discuss your project" CTA
 
 ***
 
-## Writing
+## Who I work with
 
-<div class="writing-list">
-{% for note in notes %}
-  <div class="writing-item">
-    <div class="date-prefix">{{ note.date | date: "%Y · %m" }}</div><a href="{{ note.url }}" class="writing-title">{{ note.title }}</a>
-  </div>
-{% endfor %}
-</div>
-{% endif %}
+Series A-C consumer VC funds. £50M-£500M AUM. Teams of 3-50 people.
 
 ***
+## What I do
+
+**Deal sourcing engines** - Brand discovery across multiple data sources
+
+**Data strategy** - For funds transitioning from manual to data-driven
+
+**Infrastructure upgrades** - Better databases, better tools, better outcomes
+
+**Fractional CTO/Data Officer** - When you need solutions without a full fledged data team
+
+***
+### Pricing 
+
+No results, no charge. You pay based on satisfaction with delivery. 
+
+We agree on deliverables and success criteria upfront. Projects typically range £3k-£45k depending on scope.
+
+I have zero interest in charging you for work that doesn't solve your problem.
+
+"Discuss your project" CTA

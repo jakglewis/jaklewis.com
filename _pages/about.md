@@ -4,21 +4,30 @@ permalink: /about
 layout: page
 ---
 
-## About me
+## Background
 
-I'm Jak. Here are some places you can explore in getting to know me:
+I'm Jak. I've sat on high functioning deal teams, and highly technical data teams. 
 
-* [Writing](/index)
-* [Are.na](https://www.are.na/jak-banks/index)
-* [Spotify](https://open.spotify.com/user/jak610?si=74fc1ff510f941d1)
+**Investment track record:** £230M+ deployed as Senior Investor across 7 consumer brands. Observer/advisor to 6 portfolio companies. Led complex cross-border structuring.
 
-## Updates
+**Technical foundation:** 700+ hours ML/AI training. Built credit risk scoring engines using deep learning. 
 
-You can follow me for live updates, but my social media presence is intentionally sparse:
+Here's a snapshot of my career: 
+* Until 2025, I worked as an investor and data lead in London at The Craftory 
+- Until 2021, I worked as a data scientist at CrossLend in Berlin 
+- Until 2019, I worked in Leveraged Finance at Citi 
+- Until 2017 I studied Mathematics & Economics at Durham 
 
-* Substack: [Sowing Stars](https://sowingstars.substack.com/)
-* Twitter: [@SowingStars_](https://x.com/SowingStars_)
+## Technical Track Record
 
+### Wolfbrain - The Craftory's sourcing engine
+
+Built for The Craftory. Identifies 1000s of brands, delivers 100+ pre-screened leads monthly. Comparable systems used by EQT's Motherbrain and SignalFire's Beacon.
+### SST - ML driven screening engine
+
+### Technical Stack
+
+Python (pandas, scrapy), PostgreSQL, AWS/GCP, API integrations (SimilarWeb, Consumer Edge, SPINS), LLM implementations (Claude & ChatGPT APIs).
 ## Projects
 
 Other hats I've worn:
