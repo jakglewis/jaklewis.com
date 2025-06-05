@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Jak Banks
+title: Jak Lewis
 permalink: /
 ---
 
