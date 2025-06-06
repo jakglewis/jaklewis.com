@@ -6,26 +6,26 @@ layout: page
 ## Background
 
 I'm Jak. I've sat on high functioning deal teams, and highly technical data teams. Here's a snapshot of my career: 
-
-* Until 2025, I worked as an investor and data lead in London at The Craftory 
-- Until 2021, I worked as a data scientist at CrossLend in Berlin 
-- Until 2019, I worked in Leveraged Finance at Citi 
-- Until 2017 I studied Mathematics & Economics at Durham 
+- Senior Investor & Data Lead, The Craftory (2020-2025)
+- Data Scientist, CrossLend Berlin (2019-2020) 
+- Leveraged Finance, Citi (2017-2019)
+- Mathematics & Economics, Durham (2013-2017)
 
 ***
 ## Track Record
 
-### Wolfbrain - The Craftory's sourcing engine
+#### "*Wolfbrain*" 
 
-Built for The Craftory. Identifies 1000s of brands, delivers 100+ pre-screened leads monthly. Comparable systems used by EQT's Motherbrain and SignalFire's Beacon.
-### SST - ML driven screening engine
+Built for [The Craftory](https://www.thecraftory.io/). Identifies 1000s of brands, delivers 100+ qualified leads monthly. Comparable to systems used by EQT's Motherbrain and SignalFire's Beacon.
+#### Brand discovery infrastructure 
 
-**Deal Team Experience** £230M+ deployed as Senior Investor across 7 consumer brands. Observer/advisor to 6 portfolio companies. Led complex cross-border structuring.
+Automated crawlers that ingest thousands of CPG brands monthly from multiple databases, feeding qualified leads into screening pipelines.
+#### Investment experience  
 
-**Technical foundation:** 700+ hours ML/AI training. Built credit risk scoring engines using deep learning. 
+£250M+ deployed across 7 consumer brands including [Seed](https://seed.com/), [Edgard & Cooper](https://edgardcooper.com/) (exit), [Hippeas](https://hippeas.com/), [Freddie's Flowers](https://www.freddiesflowers.com/). Observer/advisor to 6 portfolio companies. 
+#### Technical  foundation
 
-***
-### Technologies
+700+ hours ML/AI training. Built credit risk scoring engines using deep learning at CrossLend. Explored ML approaches to investment prediction using 145k company dataset, informing development of practical screening tools for live deal flow.
 
 I'm comfortable with Python (pandas, scrapy), PostgreSQL, AWS/GCP, API integrations (SimilarWeb, Consumer Edge, SPINS), LLM implementations (Claude & ChatGPT APIs).
 
