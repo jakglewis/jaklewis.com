@@ -22,10 +22,12 @@ I complete the project. You decide what it's worth.
 We agree on deliverables and success criteria upfront. 
 
 For reference, completed projects have typically been valued between £3k-£45k depending on scope and impact.
+
 ***
 ## How I work 
 
 1-4 week sprints with weekly deliverables. Everything I build integrates with your existing tools and transfers to your team. No lock-in.
+
 ***
 ## Services
 
