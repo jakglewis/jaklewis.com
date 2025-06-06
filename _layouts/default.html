@@ -4,18 +4,15 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="site-title"><a href="{{ site.baseurl }}/">Jak Banks</a> / 
+        <div class="site-title"><a href="{{ site.baseurl }}/">Jak Lewis</a> / 
           {% if page.url contains "/about" %}
             <a href="{{ site.baseurl }}/about">About</a>
-          {% elsif page.url contains "/now" %}
-            <a href="{{ site.baseurl }}/now">Now</a>
           {% else %}
-            <a href="{{ site.baseurl }}/">Writing</a>
+            <a href="{{ site.baseurl }}/">Home</a>
           {% endif %}
         </div>
         <div class="nav-links">
           <a href="/about">About</a>
-          <a href="/now">Now</a>
           <a href="#" id="theme-toggle" aria-label="Toggle dark mode">☀️</a>
         </div>
       </div>
@@ -23,7 +20,7 @@
       <main>{{ content }}</main>
       
       <footer>
-        <p>© {{ 'now' | date: "%Y" }} Jak Banks · <a href="https://sowingstars.substack.com/">Newsletter</a> · <a href="https://twitter.com/SowingStars_">Twitter</a></p>
+        <p>© {{ 'now' | date: "%Y" }} Jak Lewis · <a href="https://www.linkedin.com/in/jaklewis">LinkedIn</a></p>
       </footer>
     </div>
 

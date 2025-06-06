@@ -1,104 +1,39 @@
-# Design System Refactoring Plan
+# Website Updates Plan
 
 ## Overview
-Systematic approach to fix design inconsistencies while maintaining visual coherence throughout the refactoring process.
+Remove 'now' page navigation, update branding from "Jak Banks" to "Jak Lewis", update social links, and change homepage navigation text.
 
-## Phase 1: Foundation (Critical - Do First)
-**Goal**: Establish consistent design tokens without breaking existing layout
+## Changes Required
 
-### Step 1.1: Create Design Token Variables
-- Add CSS custom properties at top of _custom.scss
-- Define typography scale (1.125 ratio)
-- Define spacing scale (8px base)
-- Define semantic color tokens
-- Keep existing values as fallbacks initially
+### 1. Navigation Updates (_layouts/default.html)
+**Lines to modify:**
+- Line 7: Change "Jak Banks" to "Jak Lewis"
+- Lines 8-14: Remove 'now' page condition and update 'Writing' to 'Home'
+- Line 18: Remove "Now" navigation link
+- Line 26: Update footer branding and social links
 
-### Step 1.2: Typography Scale Refactor
-**Files**: _sass/_custom.scss:40-56
-**Current**: h1(2rem), h2(1.5rem), h3(1.25rem) 
-**New**: h1(1.802rem), h2(1.424rem), h3(1.266rem)
-**Impact**: Maintains hierarchy while creating mathematical consistency
+**Specific changes:**
+- Remove `{% elsif page.url contains "/now" %}` condition (lines 10-11)
+- Change `<a href="{{ site.baseurl }}/">Writing</a>` to `<a href="{{ site.baseurl }}/">Home</a>` (line 13)
+- Remove `<a href="/now">Now</a>` from nav-links (line 18)
+- Change "Jak Banks" to "Jak Lewis" in footer (line 26)
+- Remove Twitter link and change Newsletter to LinkedIn
 
-### Step 1.3: Heading Margin Normalization  
-**Files**: _sass/_custom.scss:34-56
-**Fix**: Standardize all heading margins using spacing tokens
-- margin-top: var(--space-4) 
-- margin-bottom: var(--space-2)
+### 2. Footer Social Links Update (_layouts/default.html)
+**Current:** `<a href="https://sowingstars.substack.com/">Newsletter</a> · <a href="https://twitter.com/SowingStars_">Twitter</a>`
+**New:** `<a href="https://www.linkedin.com/in/jaklewis">LinkedIn</a>`
 
-## Phase 2: Color System Consolidation (High Priority)
-**Goal**: Single source of truth for all colors
+### 3. Verification Steps
+- Check that homepage shows "Jak Lewis / Home" in navigation
+- Check that about page shows "Jak Lewis / About" in navigation
+- Verify 'Now' button is removed from navigation
+- Confirm footer shows "Jak Lewis" and LinkedIn link
+- Test that theme toggle still works
 
-### Step 2.1: Dark Mode Cleanup
-**Files**: _sass/_custom.scss:217-345
-**Action**: 
-1. Remove duplicate dark mode in media query (lines 293-345)
-2. Consolidate into single .dark-theme class using CSS custom properties
-3. Remove hardcoded colors throughout
+## Files to Edit
+1. `_layouts/default.html` - All navigation and branding changes
 
-### Step 2.2: Link Color Token Implementation
-**Files**: _sass/_custom.scss:81, 85
-**Fix**: Replace `rgba(0, 0, 0, 0.7)` with `var(--color-link-underline)`
-
-### Step 2.3: Metadata Color Standardization
-**Files**: _sass/_custom.scss:72, 113, 141, 157, 204, 256
-**Fix**: Replace hardcoded #555, #666, #777, #999 with semantic tokens:
-- Primary metadata: var(--color-text-secondary) 
-- Tertiary text: var(--color-text-tertiary)
-- Disabled state: var(--color-text-quaternary)
-
-## Phase 3: Spacing Consistency (Medium Priority)
-**Goal**: Mathematical spacing relationships
-
-### Step 3.1: Component Spacing Audit
-**Files**: _sass/_custom.scss (entire file)
-**Action**: Replace all margin/padding values with spacing tokens
-- Small gaps: var(--space-1) 
-- Standard gaps: var(--space-2)
-- Section breaks: var(--space-4)
-- Major sections: var(--space-6)
-
-### Step 3.2: Container Responsive Improvements  
-**Files**: _sass/_custom.scss:21-30
-**Enhancement**: Add intermediate breakpoints
-- 650px at >700px
-- 600px at 700px-500px  
-- fluid padding at <500px
-
-## Phase 4: Code Block Theming (Low Priority)
-**Goal**: Consistent code styling across themes
-
-### Step 4.1: Background Color Derivation
-**Files**: _sass/_custom.scss:183-195, 270-272
-**Fix**: Replace hardcoded backgrounds:
-- Light: var(--color-surface-secondary)
-- Dark: var(--color-surface-secondary) 
-
-## Implementation Order (Critical)
-Execute phases in strict order to avoid breaking design:
-
-1. **Add tokens first** - Existing styles continue working
-2. **Update typography** - Most visible improvement  
-3. **Consolidate dark mode** - Prevents conflicts
-4. **Replace hardcoded colors** - One component at a time
-5. **Normalize spacing** - Final polish
-
-## Testing Approach
-After each phase:
-1. Test light/dark mode toggle
-2. Verify responsive breakpoints  
-3. Check typography hierarchy
-4. Validate link hover states
-5. Test code block appearance
-
-## Risk Mitigation
-- Keep original values commented out during refactor
-- Test dark mode after every color change
-- Validate on mobile breakpoints after spacing changes
-- Check contrast ratios meet WCAG standards
-
-## Success Metrics
-- Single CSS custom property system
-- Mathematical typography scale  
-- Consistent 8px spacing grid
-- Consolidated dark mode implementation
-- No hardcoded colors outside token definitions
+## Notes
+- No other files contain "Jak Banks" references based on grep search
+- Index page already has correct title "Jak Lewis" in front matter
+- About page content already refers to "I'm Jak" so no changes needed there
