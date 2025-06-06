@@ -1,206 +1,104 @@
-# Jekyll Digital Garden Refactoring Plan
+# Design System Refactoring Plan
 
-## Executive Summary
+## Overview
+Systematic approach to fix design inconsistencies while maintaining visual coherence throughout the refactoring process.
 
-After analyzing the full codebase structure, this Jekyll site is set up as a digital garden but is primarily functioning as a landing page. There's significant dead code and unused features that can be safely removed to simplify the codebase.
+## Phase 1: Foundation (Critical - Do First)
+**Goal**: Establish consistent design tokens without breaking existing layout
 
-## Analysis Results
+### Step 1.1: Create Design Token Variables
+- Add CSS custom properties at top of _custom.scss
+- Define typography scale (1.125 ratio)
+- Define spacing scale (8px base)
+- Define semantic color tokens
+- Keep existing values as fallbacks initially
 
-### What's Actually Being Used:
-- **Layouts**: default.html, page.html (note.html unused)
-- **Includes**: head.html only (6 others unused)
-- **CSS**: Basic layout, theme toggle, some typography (60%+ unused)
-- **JavaScript**: Theme toggle (duplicated), unused D3.js graph
-- **Content**: 2 pages (index, about), no notes/posts
-- **Plugins**: 2 active plugins + 1 backup file
+### Step 1.2: Typography Scale Refactor
+**Files**: _sass/_custom.scss:40-56
+**Current**: h1(2rem), h2(1.5rem), h3(1.25rem) 
+**New**: h1(1.802rem), h2(1.424rem), h3(1.266rem)
+**Impact**: Maintains hierarchy while creating mathematical consistency
 
-### What's Sitting Unused:
-- **Content System**: Empty _notes directory, no posts
-- **Blog Features**: Recent posts, tags, reading time
-- **Graph Visualization**: Complex D3.js with no data
-- **Link Previews**: Hover tooltip system
-- **Navigation**: Separate nav include not used
+### Step 1.3: Heading Margin Normalization  
+**Files**: _sass/_custom.scss:34-56
+**Fix**: Standardize all heading margins using spacing tokens
+- margin-top: var(--space-4) 
+- margin-bottom: var(--space-2)
 
-## Refactoring Plan (Prioritized by Impact vs Effort)
+## Phase 2: Color System Consolidation (High Priority)
+**Goal**: Single source of truth for all colors
 
-### 🔥 HIGH IMPACT, LOW EFFORT (Do First)
+### Step 2.1: Dark Mode Cleanup
+**Files**: _sass/_custom.scss:217-345
+**Action**: 
+1. Remove duplicate dark mode in media query (lines 293-345)
+2. Consolidate into single .dark-theme class using CSS custom properties
+3. Remove hardcoded colors throughout
 
-#### 1. Remove Dead Files
-**Files to Delete:**
-```
-_includes/footer.html          # Not referenced anywhere
-_includes/link-previews.html   # Complex unused tooltip system  
-_includes/nav.html             # Navigation not used
-_includes/notes_graph.html     # D3.js graph with no data
-_includes/read-time.html       # Reading time calc not used
-_includes/recent-posts.html    # No posts to display
-_plugins/tag_generator.rb.bak  # Backup file
-download-image.js              # One-off script
-index.md.backup               # Backup file
-```
+### Step 2.2: Link Color Token Implementation
+**Files**: _sass/_custom.scss:81, 85
+**Fix**: Replace `rgba(0, 0, 0, 0.7)` with `var(--color-link-underline)`
 
-**Why it's safe:**
-- Grep searches confirm no references to these files
-- No content exists to use the blog/notes features
-- Backup files are redundant
+### Step 2.3: Metadata Color Standardization
+**Files**: _sass/_custom.scss:72, 113, 141, 157, 204, 256
+**Fix**: Replace hardcoded #555, #666, #777, #999 with semantic tokens:
+- Primary metadata: var(--color-text-secondary) 
+- Tertiary text: var(--color-text-tertiary)
+- Disabled state: var(--color-text-quaternary)
 
-**Benefit:** Removes ~500 lines of dead code, reduces confusion
+## Phase 3: Spacing Consistency (Medium Priority)
+**Goal**: Mathematical spacing relationships
 
-#### 2. Fix JavaScript Duplication
-**Problem:** Theme toggle exists in two places:
-- Inline in `_layouts/default.html` (lines 910-941) 
-- Standalone file `assets/js/theme-toggle.js`
+### Step 3.1: Component Spacing Audit
+**Files**: _sass/_custom.scss (entire file)
+**Action**: Replace all margin/padding values with spacing tokens
+- Small gaps: var(--space-1) 
+- Standard gaps: var(--space-2)
+- Section breaks: var(--space-4)
+- Major sections: var(--space-6)
 
-**Action:** Remove standalone file, keep inline version
-**Why:** Inline version is actively used, standalone is not referenced
+### Step 3.2: Container Responsive Improvements  
+**Files**: _sass/_custom.scss:21-30
+**Enhancement**: Add intermediate breakpoints
+- 650px at >700px
+- 600px at 700px-500px  
+- fluid padding at <500px
 
-**Benefit:** Eliminates code duplication, reduces HTTP requests
+## Phase 4: Code Block Theming (Low Priority)
+**Goal**: Consistent code styling across themes
 
-#### 3. Clean CSS Dead Code
-**Remove from `_sass/_custom.scss`:**
-```scss
-// Lines 1469-1516: Writing list styles (no content uses this)
-.writing-list, .writing-item, .date-prefix, .writing-title
+### Step 4.1: Background Color Derivation
+**Files**: _sass/_custom.scss:183-195, 270-272
+**Fix**: Replace hardcoded backgrounds:
+- Light: var(--color-surface-secondary)
+- Dark: var(--color-surface-secondary) 
 
-// Lines 1553-1586: Note footer styles (no notes exist)
-.note-footer, .note-related 
+## Implementation Order (Critical)
+Execute phases in strict order to avoid breaking design:
 
-// Lines 1588-1607: Tag styles (no tags in use)
-.note-tags, .post-tags, .tag
+1. **Add tokens first** - Existing styles continue working
+2. **Update typography** - Most visible improvement  
+3. **Consolidate dark mode** - Prevents conflicts
+4. **Replace hardcoded colors** - One component at a time
+5. **Normalize spacing** - Final polish
 
-// Duplicate dark mode styles (lines 1723-1791)
-@media (prefers-color-scheme: dark) { ... }
-```
+## Testing Approach
+After each phase:
+1. Test light/dark mode toggle
+2. Verify responsive breakpoints  
+3. Check typography hierarchy
+4. Validate link hover states
+5. Test code block appearance
 
-**Why it's safe:** These classes aren't used by any content
-**Benefit:** Reduces CSS by ~200 lines, improves load time
+## Risk Mitigation
+- Keep original values commented out during refactor
+- Test dark mode after every color change
+- Validate on mobile breakpoints after spacing changes
+- Check contrast ratios meet WCAG standards
 
-### 🔥 MEDIUM IMPACT, LOW EFFORT 
-
-#### 4. Simplify Jekyll Config
-**Remove unused config from `_config.yml`:**
-```yaml
-# Line 132: exclude: ['_includes/notes_graph.json'] # File doesn't exist anymore
-# Line 144-148: embed_tweets, open_external_links_in_new_tab # No content uses this
-# Line 150: relative_permalinks # Deprecated in Jekyll 3.0+
-```
-
-**Benefit:** Cleaner config, removes deprecated settings
-
-#### 5. Remove Unused Layout
-**Delete:** `_layouts/note.html`
-**Why:** No content uses this layout, site only has pages not notes/posts
-**Benefit:** Simplifies template structure
-
-#### 6. Clean _sass imports
-**Current `styles.scss`:**
-```scss
-@import "../_sass/normalize";
-@import "../_sass/code";      # Only used if code blocks exist
-@import "../_sass/style";     # Conflicts with _custom.scss
-@import "../_sass/custom";
-```
-
-**Action:** 
-- Keep normalize and custom
-- Remove code.scss (no code highlighting used)
-- Remove style.scss (conflicts/duplicates custom.scss)
-
-### 🔥 MEDIUM IMPACT, MEDIUM EFFORT
-
-#### 7. Consolidate CSS Architecture  
-**Problem:** Multiple conflicting SCSS files
-- `_sass/_style.scss`: 277 lines, older design system
-- `_sass/_custom.scss`: 500+ lines, current design (Steph Ango inspired)
-- `_sass/_code.scss`: 80 lines of syntax highlighting
-
-**Action:**
-1. Remove `_sass/_style.scss` (conflicts with custom.scss)
-2. Keep only essential parts of `_sass/_code.scss` 
-3. Consolidate everything into `_sass/_custom.scss`
-
-**Why:** Site uses custom.scss styling, style.scss creates conflicts
-**Benefit:** Single source of truth for styling, ~300 lines removed
-
-#### 8. Plugin Cleanup
-**Keep:**
-- `bidirectional_links_generator.rb` (core wiki-link functionality)
-- `empty_front_matter_note_injector.rb` (needed for Obsidian integration)
-
-**Consider removing if no notes planned:**
-- Both plugins only work with content in `_notes/` directory
-- If this remains a landing page site, plugins add complexity for no benefit
-
-### 🔥 LOW IMPACT (Future Considerations)
-
-#### 9. Gemfile Dependencies
-**Current gems all needed:**
-- jekyll: Core
-- webrick: Required for Jekyll 4.2
-- jekyll-relative-links: Used by plugins
-- Platform-specific gems: Required for cross-platform
-
-**No changes needed**
-
-#### 10. Content Structure Decision
-**Current state:** Site prepared for digital garden but used as landing page
-
-**Decision needed:**
-- **If keeping as landing page:** Remove all blog/notes infrastructure
-- **If becoming digital garden:** Keep infrastructure, add content
-
-## Implementation Priority
-
-### Phase 1: Quick Wins (1-2 hours)
-1. Delete dead files (9 files)
-2. Remove duplicate JS file  
-3. Clean unused CSS rules
-4. Simplify Jekyll config
-
-**Result:** ~60% reduction in unused code
-
-### Phase 2: Structural Cleanup (2-3 hours)  
-1. Consolidate SCSS architecture
-2. Remove unused layout
-3. Decide on plugin necessity
-
-**Result:** Simplified, maintainable codebase
-
-### Phase 3: Architecture Decision (Planning needed)
-1. Decide: Landing page vs Digital garden
-2. Adjust remaining infrastructure accordingly
-
-## Risk Assessment
-
-### ✅ SAFE TO REMOVE (High Confidence):
-- All unused include files (confirmed via grep)
-- Backup files and one-off scripts
-- Duplicate JavaScript
-- CSS for non-existent content types
-
-### ⚠️ PROCEED WITH CAUTION:
-- Jekyll plugins (if notes are planned)
-- Core layout structure
-- Theme system (actively used)
-
-### ❌ DO NOT REMOVE:
-- `_layouts/default.html` and `page.html`
-- `_includes/head.html`
-- Theme CSS classes
-- Active JavaScript functionality
-
-## Expected Benefits
-
-1. **Performance:** ~40% smaller CSS, fewer HTTP requests
-2. **Maintainability:** Single source of truth for styling
-3. **Clarity:** Remove confusion between unused vs active code
-4. **Development Speed:** Less code to navigate and understand
-5. **Build Time:** Fewer files to process
-
-## Files Requiring Manual Review
-
-1. **`_config.yml`** - Check if any custom settings needed
-2. **`_sass/_custom.scss`** - Verify all needed styles retained
-3. **Navigation structure** - Currently hardcoded in default.html
-
-This plan prioritizes removals with immediate benefit and low risk, progressing to structural changes that require more consideration.
+## Success Metrics
+- Single CSS custom property system
+- Mathematical typography scale  
+- Consistent 8px spacing grid
+- Consolidated dark mode implementation
+- No hardcoded colors outside token definitions
