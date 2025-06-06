@@ -159,37 +159,6 @@ hr {
   }
 }
 
-// Writing List Steph Ango Style
-.writing-list {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1.5rem;
-  padding-left: 0;
-}
-
-.writing-item {
-  display: flex;
-  align-items: baseline;
-  margin-bottom: 0.6rem;
-  line-height: 1.4;
-}
-
-.date-prefix {
-  color: #777;
-  font-size: 0.9rem;
-  width: 5rem;
-  display: inline-block;
-  font-variant-numeric: tabular-nums;
-  margin-right: 0.5rem;
-}
-
-.writing-title {
-  border-bottom: none;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
-  text-decoration-color: rgba(0, 0, 0, 0.3);
-}
 
 // Note and post content
 .note-content, .post-content {
@@ -226,62 +195,7 @@ hr {
   }
 }
 
-// Note and post footer
-.note-footer, .post-footer {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid $border-color;
-  
-  .post-newsletter {
-    background-color: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 5px;
-    margin-bottom: 2rem;
-    
-    p {
-      margin: 0;
-      font-size: 0.95rem;
-    }
-  }
-  
-  .note-related {
-    h3 {
-      font-size: 1.1rem;
-      margin-top: 0;
-      margin-bottom: 1rem;
-      color: #555;
-    }
-    
-    ul {
-      padding-left: 1.2rem;
-      
-      li {
-        margin-bottom: 0.75rem;
-      }
-    }
-  }
-}
 
-// Tags
-.note-tags, .post-tags {
-  margin-top: 2rem;
-  
-  .tag {
-    display: inline-block;
-    background: #f1f1f1;
-    padding: 0.2rem 0.6rem;
-    border-radius: 3px;
-    font-size: 0.8rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-bottom: none;
-    
-    &:hover {
-      background: #e5e5e5;
-      border-bottom: none;
-    }
-  }
-}
 
 // Footer
 footer {
@@ -342,13 +256,6 @@ footer {
     color: #999;
   }
   
-  .date-prefix {
-    color: #999;
-  }
-  
-  .writing-title {
-    text-decoration-color: rgba(255, 255, 255, 0.3);
-  }
   
   hr {
     background-color: var(--border-color);
@@ -365,21 +272,6 @@ footer {
     }
   }
   
-  .note-footer {
-    border-top-color: var(--border-color);
-    
-    .note-related h3 {
-      color: #aaa;
-    }
-  }
-  
-  .note-tags .tag {
-    background: #333;
-    
-    &:hover {
-      background: #444;
-    }
-  }
 }
 
 // Light theme (for toggle)
@@ -449,20 +341,5 @@ footer {
       }
     }
     
-    .note-footer {
-      border-top-color: #333;
-      
-      .note-related h3 {
-        color: #aaa;
-      }
-    }
-    
-    .note-tags .tag {
-      background: #333;
-      
-      &:hover {
-        background: #444;
-      }
-    }
   }
 }
