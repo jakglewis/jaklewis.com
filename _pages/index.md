@@ -22,12 +22,12 @@ We agree on deliverables and success criteria upfront.
 ***
 ## Services
 
-**Deal sourcing engines** - Brand discovery across multiple data sources. Automated, or one off. 
+**Deal sourcing engines & Infrastructure** - Brand discovery & Screening across all consumer categories & geographies. Regular updates, or one off deep dives. 
 
-**Fractional CTO/Data Officer** - When you need solutions without a full fledged data team
+**Fractional Data Lead** - When you need solutions without a full fledged data team.
 
-**Data strategy** - For funds ready to move from manual to systematic deal flow
+**Data advisory** - Building strategies for funds ready to move from manual to systematic deal flow.
 
-**Infrastructure upgrades** - Better databases, knowledge management, processes that work 
+**Infrastructure upgrades** - Better databases, knowledge management, and processes.   
 
 ***
