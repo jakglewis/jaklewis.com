@@ -7,24 +7,15 @@ permalink: /
 
 I bridge that gap because I've sat on both sides - deploying £250M+ and building the systems that find deals.
 
-"Discuss your project" 
-
 ***
 ## Who I work with
 
-Series A-C consumer VC funds. £50M-£500M AUM. Teams of 3-50 people.
-
-***
-## Pricing 
-
-I complete the project. You decide what it's worth.
-
-We agree on deliverables and success criteria upfront. 
-
-For reference, completed projects have typically been valued between £3k-£45k depending on scope and impact.
+Pre-Seed to Series A consumer VC funds. £50M-£500M AUM. Teams of 3-50 people.
 
 ***
 ## How I work 
+
+We agree on deliverables and success criteria upfront. 
 
 1-4 week sprints with weekly deliverables. Everything I build integrates with your existing tools and transfers to your team. No lock-in.
 
