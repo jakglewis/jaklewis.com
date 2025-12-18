@@ -10,14 +10,7 @@ I bridge that gap because I've sat on both sides - deploying £250M+ and buildin
 ***
 ## Who I work with
 
-Pre-Seed to Series A consumer VC funds. £50M-£500M AUM. Teams of 3-50 people.
-
-***
-## How I work 
-
-We agree on deliverables and success criteria upfront. 
-
-1-4 week sprints with weekly deliverables. Everything I build integrates with your existing tools and transfers to your team. No lock-in.
+Pre-Seed to Series A consumer VC funds. £50M-£500M AUM. 
 
 ***
 ## Services
@@ -28,6 +21,13 @@ We agree on deliverables and success criteria upfront.
 
 **Data advisory** - Building strategies for funds ready to move from manual to systematic deal flow.
 
-**Infrastructure upgrades** - Better databases, knowledge management, and processes.   
+**Infrastructure upgrades** - Better databases, knowledge management, and processes.  
+
+***
+## How I work 
+
+We agree on deliverables and success criteria upfront. 
+
+1-4 week sprints with weekly deliverables. Everything I build integrates with your existing tools and transfers to your team. No lock-in.
 
 ***
