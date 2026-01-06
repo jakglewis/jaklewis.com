@@ -11,12 +11,18 @@ I'm Jak. I've sat on high functioning deal teams, and highly technical data team
 - Leveraged Finance, Citi (2017-2019)
 - Mathematics & Economics, Durham (2013-2017)
 
+Working style & judgment:
+
+> "Jak is tremendously insightful about business dynamics, a wiz with numbers, and understands capital stacks and investor motivations. He can navigate complex stakeholder environments, resolve tensions, and deliver a project to completion."
+
+— [Tom Reems](https://www.linkedin.com/in/tom-reems-109b662/), Partner, Squire Patton Boggs (US)
+
 ***
 ## Track Record
 
-#### "*Wolfbrain*" 
+#### "*Wolfbrain*" (internal deal-sourcing system at The Craftory)
 
-Built for [The Craftory](https://www.thecraftory.io/). Identifies 1000s of brands, delivers 100+ qualified leads monthly. Comparable to systems used by EQT's Motherbrain and SignalFire's Beacon.
+Identifies 1000s of brands, delivers 100+ qualified leads monthly. Comparable to systems used by EQT's Motherbrain and SignalFire's Beacon.
 #### Brand discovery infrastructure 
 
 Automated crawlers that ingest thousands of CPG brands monthly from multiple databases, feeding qualified leads into screening pipelines.

@@ -1,39 +1,131 @@
-# Website Updates Plan
+I’m going to ask you to insert testimonials into my Home and About pages, but before making any changes, I want you to:
 
-## Overview
-Remove 'now' page navigation, update branding from "Jak Banks" to "Jak Lewis", update social links, and change homepage navigation text.
+1. Understand the existing site format and design language
 
-## Changes Required
+The site is intentionally minimal, text‑forward, and elegant.
+No decorative components, no cards, no callouts, no boxes, no background shading.
+Typography hierarchy is simple: headings, body text, dividers.
+The current visual rhythm relies on spacing and restraint, not UI elements.
+2. Propose 2–3 very simple ways to format testimonial quotes
+Each option should:
 
-### 1. Navigation Updates (_layouts/default.html)
-**Lines to modify:**
-- Line 7: Change "Jak Banks" to "Jak Lewis"
-- Lines 8-14: Remove 'now' page condition and update 'Writing' to 'Home'
-- Line 18: Remove "Now" navigation link
-- Line 26: Update footer branding and social links
+Use only elements already present or implied (e.g. paragraphs, italics, em dashes, quotation marks, line breaks).
+Avoid introducing “testimonial components,” icons, avatars, borders, or special styling.
+Feel like a natural extension of the existing copy, not a separate section.
+Examples of acceptable primitives:
 
-**Specific changes:**
-- Remove `{% elsif page.url contains "/now" %}` condition (lines 10-11)
-- Change `<a href="{{ site.baseurl }}/">Writing</a>` to `<a href="{{ site.baseurl }}/">Home</a>` (line 13)
-- Remove `<a href="/now">Now</a>` from nav-links (line 18)
-- Change "Jak Banks" to "Jak Lewis" in footer (line 26)
-- Remove Twitter link and change Newsletter to LinkedIn
+Quotation marks
+Italics
+Em dashes
+Subtle attribution lines
+Existing divider rhythm
+Examples of unacceptable changes:
 
-### 2. Footer Social Links Update (_layouts/default.html)
-**Current:** `<a href="https://sowingstars.substack.com/">Newsletter</a> · <a href="https://twitter.com/SowingStars_">Twitter</a>`
-**New:** `<a href="https://www.linkedin.com/in/jaklewis">LinkedIn</a>`
+Cards, boxes, background colors
+Pull‑quote styling
+Large quotation marks as visual elements
+New layout patterns
+3. For each option, show a concrete example
 
-### 3. Verification Steps
-- Check that homepage shows "Jak Lewis / Home" in navigation
-- Check that about page shows "Jak Lewis / About" in navigation
-- Verify 'Now' button is removed from navigation
-- Confirm footer shows "Jak Lewis" and LinkedIn link
-- Test that theme toggle still works
+Use one of the real testimonials.
+Show exactly how it would appear inline in the Home page.
+4. Explain the tradeoffs
 
-## Files to Edit
-1. `_layouts/default.html` - All navigation and branding changes
+Why this option preserves simplicity
+How visible the quote is vs how “quiet” it feels
+5. Do NOT implement anything yet
 
-## Notes
-- No other files contain "Jak Banks" references based on grep search
-- Index page already has correct title "Jak Lewis" in front matter
-- About page content already refers to "I'm Jak" so no changes needed there
+This is a proposal and discussion step only.
+Wait for my explicit approval of one formatting approach before editing files.
+Once I choose an option, you will then apply that formatting consistently to all testimonial insertions, without changing anything else on the site.
+
+HOMEPAGE CHANGES
+1. Insert testimonial directly after hero section
+Find this block (or equivalent):
+
+84% of funds want data-driven deal flow. 1% have it.
+I bridge that gap because I’ve sat on both sides - deploying £250M+ and building the systems that find deals.
+
+Immediately after it, insert the following testimonial block:
+
+livecodeserver
+> “Jak is the person people turn to when there’s a question no one else knows how to answer. He quickly understands the core of a problem, thinks through the full range of outcomes, and executes the most effective, practical solution.
+Just as importantly, he’s genuinely great to work with — kind but direct, honest without being harsh.”
+>
+> **Santiago Cardenas**  
+> Senior Investor, Octopus ($10bn sustainable private equity fund)
+
+✅ Do not alter the hero copy itself.
+
+2. Insert testimonial after the Services section
+Locate the end of the Services list, which currently ends with:
+
+Infrastructure upgrades - Better databases, knowledge management, and processes.
+
+Immediately after this line, insert:
+
+sql_more
+What this looks like in practice:
+
+> “Having worked hands-on with the systems Jak designed, I was able to move faster and with greater accuracy.
+One impressive contribution was how he fine tuned his sourcing engine with critical screening metrics, allowing me to see multiple targets on a single dashboard and prioritise high potential opportunities.
+Jak also worked creatively to define proxy metrics when private financial data didn’t exist.”
+>
+> **Chinmaya Gajaria**  
+> Investor, Single Family Office  
+> Focus: Technology, Foodtech & Alt‑Proteins; LP in emerging managers
+
+✅ Do not rename the Services section.
+✅ Do not move “How I work”.
+
+3. (Optional but recommended) Add one bridging sentence before “How I work”
+Immediately before the “How I work” section heading, insert:
+
+Most engagements start with a live demo of the output — screened, investment‑relevant brands delivered into your existing tools.
+
+✅ This is a single sentence only.
+✅ No new section header.
+
+ABOUT PAGE CHANGES
+4. Insert testimonial after Background section
+Find the Background section, which ends with:
+
+Mathematics & Economics, Durham (2013-2017)
+
+Immediately after this, insert the following block:
+
+basic
+Working style & judgment:
+
+> “Jak is tremendously insightful about business dynamics, a wiz with numbers, and understands capital stacks and investor motivations.
+He can navigate complex stakeholder environments, resolve tensions, and deliver a project to completion.”
+>
+> **Tom Reems**  
+> Partner, Squire Patton Boggs (US)
+
+✅ Do not modify the Background list itself.
+
+5. Minor wording clarification in Track Record (non‑structural)
+Find this line:
+
+“Wolfbrain”
+Built for The Craftory.
+
+Replace with:
+
+“Wolfbrain” (internal deal‑sourcing system at The Craftory)
+
+✅ Do not change the rest of the Track Record content.
+✅ This is a wording clarification only.
+
+DO NOT DO THE FOLLOWING
+Do NOT add new sections or navigation items
+Do NOT change headings (except the Wolfbrain clarification)
+Do NOT introduce Donna by name
+Do NOT alter styling, layout, or metadata
+Do NOT touch footer or copyright blocks
+SUCCESS CRITERIA
+Testimonials appear inline and feel native to the flow
+Pages render exactly as before, with only added content
+No broken markdown, JSX, or templating
+No changes outside Home and About pages
