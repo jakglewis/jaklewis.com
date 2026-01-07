@@ -13,7 +13,7 @@ I'm Jak. I've sat on high functioning deal teams, and highly technical data team
 
 Working style & judgment:
 
-> "Jak is tremendously insightful about business dynamics, a wiz with numbers, and understands capital stacks and investor motivations. He can navigate complex stakeholder environments, resolve tensions, and deliver a project to completion."
+> *"Jak is tremendously insightful about business dynamics, a wiz with numbers, and understands capital stacks and investor motivations. He can navigate complex stakeholder environments, resolve tensions, and deliver a project to completion."*
 
 — [Tom Reems](https://www.linkedin.com/in/tom-reems-109b662/), Partner, Squire Patton Boggs (US)
 

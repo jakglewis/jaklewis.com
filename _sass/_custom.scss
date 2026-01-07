@@ -225,11 +225,11 @@ hr {
 
 
 // Note and post content
-.note-content, .post-content {
+.note-content, .post-content, .page-content {
   h1, h2, h3 {
     margin-top: var(--space-5);
   }
-  
+
   blockquote {
     margin-left: 0;
     padding-left: var(--space-2);
